@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de login</title>
+</head>
+
+<body>
+    <div>
+   <form onsubmit="event.preventDefault(); cadastrar();">
+    <label for="login">Email</label>
+    <input id="email" type="email" name="login" size="20" placeholder="email@example.com">
+    <label for="senha">Password</label>
+   <input id="password" type="password" name="senha" size="20" placeholder="********">
+   <button id="button" type="submit">cadastrar</button>
+   <a id="forgot" href="" target="_blank">Forgot password</a>
+</form>
+</div>
+   <script>
+    const button = document.querySelector("#button")
+    
+    function cadastrar(event){
+        const email = document.querySelector("#email").value
+        const senha = document.querySelector("#password").value
+        const user = {
+            email:email,
+            senha:senha,
+        }
+        console.log("login data", user)
+        
+    }
+
+    button.addEventListener("submit",cadastrar)
+
+
+</script>
+</body>
+</html>
